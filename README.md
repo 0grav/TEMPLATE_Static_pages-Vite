@@ -1,0 +1,1 @@
+# TEMPLATE_Static_pages-Vite
