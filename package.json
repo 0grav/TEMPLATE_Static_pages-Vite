@@ -1,10 +1,16 @@
 {
   "name": "template_static_pages-vite",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts,.js",
+    "format": "prettier --write src"
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/0grav/TEMPLATE_Static_pages-Vite/issues"
   },
-  "homepage": "https://github.com/0grav/TEMPLATE_Static_pages-Vite#readme"
+  "homepage": "https://github.com/0grav/TEMPLATE_Static_pages-Vite#readme",
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2"
+  }
 }
