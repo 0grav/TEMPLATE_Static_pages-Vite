@@ -2,15 +2,18 @@
   "name": "template_static_pages-vite",
   "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Modern template for creating static websites with Vite, TypeScript, and Tailwind CSS",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.js",
-    "format": "prettier --write src",
+    "lint:fix": "eslint src --ext .ts,.js --fix",
+    "format": "prettier --write \"src/**/*.{js,ts,css,html}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,css,html}\"",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist .vite",
     "prepare": "husky"
   },
   "repository": {
@@ -25,12 +28,16 @@
   },
   "homepage": "https://github.com/0grav/TEMPLATE_Static_pages-Vite#readme",
   "lint-staged": {
-    "*.{js,ts,css,html}": [
+    "*.{js,ts}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,html,json,md}": [
       "prettier --write"
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.35.0",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
     "eslint": "^9.35.0",
